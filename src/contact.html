@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Book — a clean and modern digital reading library.">
+  <title>Contact | E-Book</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            ink: '#111111',
+            gold: '#d4a017'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+<header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+    <a href="../index.html" class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-gray-950">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gray-950 text-white">E</span>
+      E-Book
+    </a>
+
+    <div class="hidden items-center gap-7 md:flex">
+      <a href="../index.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Home</a>
+      <a href="about.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">About</a>
+      <a href="contact.html" class="text-sm font-bold text-gray-950">Contact</a>
+      <a href="signin.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Sign In</a>
+      <a href="signup.html" class="rounded-xl bg-gray-950 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800">Get Started</a>
+    </div>
+
+    <button id="menuBtn" class="rounded-lg border border-gray-200 p-2 md:hidden" aria-label="Open menu" type="button">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <nav id="mobileMenu" class="hidden border-t border-gray-100 bg-white px-5 pb-5 md:hidden">
+    <div class="flex flex-col gap-2 pt-3">
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="../index.html">Home</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="about.html">About</a>
+      <a class="rounded-lg px-3 py-2 font-semibold hover:bg-gray-100" href="contact.html">Contact</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="signin.html">Sign In</a>
+      <a class="rounded-lg bg-gray-950 px-3 py-2 text-center font-semibold text-white" href="signup.html">Get Started</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="bg-gray-50">
+  <div class="mx-auto max-w-4xl px-5 py-16 text-center lg:px-8">
+    <p class="text-xs font-bold uppercase tracking-widest text-amber-700">GET IN TOUCH</p>
+    <h1 class="mt-4 text-5xl font-black">We'd love to hear from you.</h1>
+    <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600">Questions, feedback, or suggestions? Send us a message and we'll get back to you.</p>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+  <div class="grid gap-10 lg:grid-cols-5">
+    <div class="lg:col-span-2">
+      <p class="text-sm font-bold uppercase tracking-wider text-amber-700">Contact details</p>
+      <h2 class="mt-2 text-3xl font-black">Let's talk</h2>
+      <p class="mt-4 leading-7 text-gray-600">Use the form or reach us through one of the channels below.</p>
+      <div class="mt-8 space-y-4">
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <p class="text-xs font-bold uppercase text-gray-400">Email</p>
+          <p class="mt-1 font-semibold">mshahzaibrasheed43@gmail.com</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <p class="text-xs font-bold uppercase text-gray-400">Phone</p>
+          <p class="mt-1 font-semibold">+92 315 4705688</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <p class="text-xs font-bold uppercase text-gray-400">Office</p>
+          <p class="mt-1 font-semibold">Lahore, Pakistan</p>
+        </article>
+      </div>
+      <aside class="mt-6 rounded-2xl bg-gray-950 p-6 text-white">
+        <p class="font-bold">Support hours</p>
+        <p class="mt-2 text-sm text-gray-400">Monday &ndash; Friday &middot; 9:00 AM &ndash; 5:00 PM</p>
+      </aside>
+    </div>
+
+    <div class="lg:col-span-3">
+      <div class="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+        <div class="mb-7">
+          <h2 class="text-2xl font-black">Send a message</h2>
+          <p class="mt-1 text-sm text-gray-500">Fill out the form below to get in touch with our team.</p>
+        </div>
+
+        <form action="https://formspree.io/f/myekgrjb" method="POST" class="space-y-5">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="name" class="mb-2 block text-sm font-semibold">Name</label>
+              <input id="name" name="name" required type="text" placeholder="Your name" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-gray-950">
+            </div>
+            <div>
+              <label for="email" class="mb-2 block text-sm font-semibold">Email</label>
+              <input id="email" name="email" required type="email" placeholder="you@example.com" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-gray-950">
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="mb-2 block text-sm font-semibold">Subject</label>
+            <input id="subject" name="subject" required type="text" placeholder="How can we help?" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-gray-950">
+          </div>
+
+          <div>
+            <label for="message" class="mb-2 block text-sm font-semibold">Message</label>
+            <textarea id="message" name="message" required rows="6" placeholder="Write your message..." class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-gray-950"></textarea>
+          </div>
+
+          <label class="flex items-start gap-3 text-sm text-gray-500">
+            <input required type="checkbox" class="mt-1 h-4 w-4 rounded border-gray-300">
+            I agree to be contacted about my message.
+          </label>
+
+          <button type="submit" class="w-full rounded-xl bg-gray-950 px-6 py-3.5 font-semibold text-white hover:bg-gray-800">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-gray-200 bg-gray-950 text-gray-300">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-4 lg:px-8">
+    <div class="md:col-span-2">
+      <div class="mb-3 flex items-center gap-2 text-xl font-extrabold text-white"><span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-gray-950">E</span>E-Book</div>
+      <p class="max-w-md text-sm leading-6 text-gray-400">A simple digital library for discovering thoughtful books, learning something new, and reading at your own pace.</p>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold text-white">Explore</h3>
+      <div class="space-y-2 text-sm">
+        <a class="block hover:text-white" href="../index.html">Home</a>
+        <a class="block hover:text-white" href="about.html">About</a>
+        <a class="block hover:text-white" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold text-white">Account</h3>
+      <div class="space-y-2 text-sm">
+        <a class="block hover:text-white" href="signin.html">Sign In</a>
+        <a class="block hover:text-white" href="signup.html">Create Account</a>
+        <a class="block hover:text-white" href="contact.html">Help Center</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-5 py-5 text-center text-xs text-gray-500">&copy; 2026 E-Book. Built with HTML5 &amp; Tailwind CSS.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Book — a clean and modern digital reading library.">
+  <title>Home | E-Book</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#111111', gold: '#d4a017' }
+      }
+    }
+  }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+<header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+    <a href="index.html" class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-gray-950">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gray-950 text-white">E</span>
+      E-Book
+    </a>
+    <div class="hidden items-center gap-7 md:flex">
+      <a href="index.html" class="text-sm font-bold text-gray-950">Home</a>
+      <a href="src/about.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">About</a>
+      <a href="src/contact.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Contact</a>
+      <a href="src/signin.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Sign In</a>
+      <a href="src/signup.html" class="rounded-xl bg-gray-950 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800 transition">Get Started</a>
+    </div>
+    <button id="menuBtn" class="rounded-lg border border-gray-200 p-2 md:hidden" aria-label="Open menu">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+  <nav id="mobileMenu" class="hidden border-t border-gray-100 bg-white px-5 pb-5 md:hidden">
+    <div class="flex flex-col gap-2 pt-3">
+      <a class="rounded-lg px-3 py-2 font-semibold hover:bg-gray-100" href="index.html">Home</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="src/about.html">About</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="src/contact.html">Contact</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="src/signin.html">Sign In</a>
+      <a class="rounded-lg bg-gray-950 px-3 py-2 text-center font-semibold text-white" href="src/signup.html">Get Started</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="bg-gray-50">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-widest text-amber-700">YOUR DIGITAL LIBRARY</p>
+      <h1 class="mt-4 text-5xl font-black tracking-tight text-gray-950 sm:text-6xl">Read more.<br><span class="text-gray-500">Discover more.</span></h1>
+      <p class="mt-6 max-w-xl text-lg leading-8 text-gray-600">Explore a growing collection of books designed to inspire curiosity, improve your skills, and make every reading session worthwhile.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="src/signup.html" class="rounded-xl bg-gray-950 px-6 py-3.5 font-semibold text-white hover:bg-gray-800 transition">Start Reading</a>
+        <a href="src/about.html" class="rounded-xl bg-gray-200 px-6 py-3.5 font-semibold text-gray-900 hover:bg-gray-300 transition">Learn More</a>
+      </div>
+    </div>
+    <div class="relative">
+      <figure class="mx-auto max-w-md rounded-3xl bg-gray-950 p-5 shadow-2xl">
+        <div class="rounded-2xl bg-gradient-to-br from-amber-200 via-orange-100 to-white p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-gray-600">Featured</p>
+          <h2 class="mt-20 text-4xl font-black text-gray-950">The Art of<br>Reading</h2>
+          <p class="mt-3 text-sm text-gray-600">E-Book Collection</p>
+          <div class="mt-20 flex justify-between text-xs font-semibold text-gray-500"><span>E-BOOK</span><span>01</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+  <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-wider text-amber-700">Browse</p>
+      <h2 class="mt-2 text-3xl font-black">Popular categories</h2>
+    </div>
+    <a href="src/about.html" class="text-sm font-semibold text-gray-700 hover:text-black">View collection &rarr;</a>
+  </div>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <article class="rounded-2xl border border-gray-200 p-6 hover:-translate-y-1 hover:shadow-lg transition">
+      <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-950 text-white">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      </div>
+      <h3 class="font-bold">Fiction</h3>
+      <p class="mt-1 text-sm text-gray-500">Stories that stay with you.</p>
+    </article>
+    <article class="rounded-2xl border border-gray-200 p-6 hover:-translate-y-1 hover:shadow-lg transition">
+      <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-900">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <h3 class="font-bold">Self Growth</h3>
+      <p class="mt-1 text-sm text-gray-500">Build better habits.</p>
+    </article>
+    <article class="rounded-2xl border border-gray-200 p-6 hover:-translate-y-1 hover:shadow-lg transition">
+      <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100 text-gray-900">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <h3 class="font-bold">Technology</h3>
+      <p class="mt-1 text-sm text-gray-500">Learn modern ideas.</p>
+    </article>
+    <article class="rounded-2xl border border-gray-200 p-6 hover:-translate-y-1 hover:shadow-lg transition">
+      <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100 text-gray-900">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="font-bold">Travel</h3>
+      <p class="mt-1 text-sm text-gray-500">Explore through pages.</p>
+    </article>
+  </div>
+</section>
+
+
+<section id="library-crud" class="mx-auto max-w-7xl px-5 py-16 lg:px-8 border-t border-gray-200">
+  <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-wider text-amber-700">Personal Collection</p>
+      <h2 class="mt-2 text-3xl font-black tracking-tight text-gray-950 sm:text-4xl">Reading List Manager</h2>
+      <p id="collectionSummaryNote" class="mt-2 max-w-2xl text-sm text-gray-600">
+        Organize your personal reading shelf, track your progress, and keep notes on every book you read.
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-6">
+      <div class="flex items-center gap-6 text-sm">
+        <div>
+          <span class="text-gray-500">Total Titles:</span>
+          <strong id="statTotalBooks" class="ml-1 font-black text-gray-950">0</strong>
+        </div>
+        <div>
+          <span class="text-gray-500">Completed:</span>
+          <strong id="statCompletedBooks" class="ml-1 font-black text-gray-950">0</strong>
+        </div>
+        <div>
+          <span class="text-gray-500">Avg Rating:</span>
+          <strong id="statAvgRating" class="ml-1 font-black text-gray-950">0.0 / 5.0</strong>
+        </div>
+      </div>
+      <button id="resetDefaultBooksBtn" type="button" class="rounded-xl bg-gray-950 px-4 py-2.5 text-xs font-semibold text-white hover:bg-gray-800 transition">
+        Restore Defaults
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-10 grid gap-8 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <div id="crudFormCard" class="sticky top-24 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-7">
+        <div class="mb-6">
+          <p class="text-xs font-bold uppercase tracking-wider text-amber-700">Book Entry</p>
+          <h3 id="crudFormTitle" class="mt-1 text-2xl font-black text-gray-950">Add a Book</h3>
+        </div>
+
+        <form id="bookCrudForm" class="space-y-4">
+          <div>
+            <label for="bookTitle" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Book Title *</label>
+            <input id="bookTitle" required type="text" placeholder="e.g. Clean Code" class="w-full rounded-xl border border-gray-300 px-3.5 py-2.5 text-sm outline-none focus:border-gray-950">
+          </div>
+
+          <div>
+            <label for="bookAuthor" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Author Name *</label>
+            <input id="bookAuthor" required type="text" placeholder="e.g. Robert C. Martin" class="w-full rounded-xl border border-gray-300 px-3.5 py-2.5 text-sm outline-none focus:border-gray-950">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="bookCategory" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Category</label>
+              <select id="bookCategory" class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+                <option value="Fiction">Fiction</option>
+                <option value="Self Growth">Self Growth</option>
+                <option value="Technology">Technology</option>
+                <option value="Travel">Travel</option>
+                <option value="Science">Science</option>
+                <option value="History">History</option>
+              </select>
+            </div>
+            <div>
+              <label for="bookStatus" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Reading Status</label>
+              <select id="bookStatus" class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+                <option value="Reading">Reading</option>
+                <option value="Completed">Completed</option>
+                <option value="Want to Read">Want to Read</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <label for="bookYear" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Year</label>
+              <input id="bookYear" required type="number" min="1400" max="2030" value="2024" class="w-full rounded-xl border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+            </div>
+            <div>
+              <label for="bookPages" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Pages</label>
+              <input id="bookPages" required type="number" min="1" max="5000" value="280" class="w-full rounded-xl border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+            </div>
+            <div>
+              <label for="bookRating" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Rating</label>
+              <input id="bookRating" required type="number" min="1" max="5" step="0.1" value="4.8" class="w-full rounded-xl border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+            </div>
+          </div>
+
+          <div>
+            <label for="bookNotes" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-600">Review / Personal Notes</label>
+            <textarea id="bookNotes" rows="3" placeholder="Key takeaways or thoughts..." class="w-full rounded-xl border border-gray-300 px-3.5 py-2.5 text-sm outline-none focus:border-gray-950"></textarea>
+          </div>
+
+          <div class="flex gap-2.5 pt-2">
+            <button id="crudSubmitBtn" type="submit" class="flex-1 rounded-xl bg-gray-950 px-5 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition">
+              Add to Library
+            </button>
+            <button id="crudCancelEditBtn" type="button" class="hidden rounded-xl bg-gray-200 px-4 py-3 text-sm font-semibold text-gray-800 hover:bg-gray-300 transition">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="lg:col-span-8">
+      <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 sm:p-5">
+        <div class="grid gap-3 sm:grid-cols-12">
+          <div class="sm:col-span-5">
+            <label for="searchQueryInput" class="sr-only">Search books</label>
+            <input id="searchQueryInput" type="search" placeholder="Search by title, author, category, or notes..." class="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-gray-950">
+          </div>
+          <div class="sm:col-span-3">
+            <label for="filterCategorySelect" class="sr-only">Filter by Category</label>
+            <select id="filterCategorySelect" class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+              <option value="All">All Categories</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Self Growth">Self Growth</option>
+              <option value="Technology">Technology</option>
+              <option value="Travel">Travel</option>
+              <option value="Science">Science</option>
+              <option value="History">History</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="filterStatusSelect" class="sr-only">Filter by Status</label>
+            <select id="filterStatusSelect" class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+              <option value="All">All Status</option>
+              <option value="Reading">Reading</option>
+              <option value="Completed">Completed</option>
+              <option value="Want to Read">Want to Read</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="sortOrderSelect" class="sr-only">Sort order</label>
+            <select id="sortOrderSelect" class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-950">
+              <option value="newest">Newest</option>
+              <option value="rating">Top Rated</option>
+              <option value="title">Title A-Z</option>
+              <option value="year">Release Year</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-xs text-gray-500">
+          <span id="booksResultCount" class="font-semibold">Showing 0 titles</span>
+          <button id="clearFiltersBtn" type="button" class="font-semibold text-gray-900 underline hover:text-amber-700">Reset Filters</button>
+        </div>
+      </div>
+
+      <div id="booksGridContainer" class="mt-6 grid gap-6 sm:grid-cols-2"></div>
+
+      <div id="booksEmptyState" class="hidden mt-6 rounded-3xl border border-dashed border-gray-300 bg-gray-50 p-12 text-center">
+        <h3 class="text-lg font-bold text-gray-900">No matching books found</h3>
+        <p class="mt-1 text-sm text-gray-500">Try clearing your search filters or add a new book using the form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="api-explorer" class="bg-gray-50 py-16 border-t border-gray-200">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-wider text-amber-700">Global Catalog</p>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-gray-950 sm:text-4xl">Discover Millions of Books</h2>
+        <p class="mt-2 max-w-2xl text-sm text-gray-600">
+          Search the live Open Library catalog by title, subject, or author and save books directly to your personal reading list.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+      <form id="apiSearchForm" class="flex flex-col gap-3 sm:flex-row">
+        <input id="apiSearchInput" type="search" value="javascript programming" placeholder="Search books by title, topic, or author (e.g. artificial intelligence, history, psychology)..." class="flex-1 rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-950">
+        <button type="submit" class="rounded-xl bg-gray-950 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition">
+          Search Catalog
+        </button>
+      </form>
+      <div class="mt-4 flex flex-wrap items-center gap-4 text-xs">
+        <span class="font-bold uppercase tracking-wider text-gray-400">Popular Topics:</span>
+        <button type="button" data-api-topic="javascript programming" class="font-semibold text-gray-700 hover:text-gray-950 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-950 transition">JavaScript</button>
+        <button type="button" data-api-topic="artificial intelligence" class="font-semibold text-gray-700 hover:text-gray-950 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-950 transition">Artificial Intelligence</button>
+        <button type="button" data-api-topic="world history" class="font-semibold text-gray-700 hover:text-gray-950 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-950 transition">World History</button>
+        <button type="button" data-api-topic="science fiction classics" class="font-semibold text-gray-700 hover:text-gray-950 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-950 transition">Sci-Fi Classics</button>
+        <button type="button" data-api-topic="psychology habits" class="font-semibold text-gray-700 hover:text-gray-950 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-950 transition">Psychology</button>
+      </div>
+    </div>
+
+    <div id="apiLoadingState" class="hidden mt-8 rounded-3xl border border-gray-200 bg-white p-12 text-center shadow-sm">
+      <div class="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-gray-200 border-t-gray-950"></div>
+      <p class="mt-4 text-sm font-semibold text-gray-700">Loading books from catalog...</p>
+    </div>
+
+    <div id="apiErrorState" class="hidden mt-8 rounded-3xl border border-red-200 bg-red-50 p-8 text-center">
+      <p class="text-lg font-bold text-red-900">Unable to Load Catalog</p>
+      <p id="apiErrorMessage" class="mt-1 text-sm text-red-700">Could not retrieve catalog results at this moment.</p>
+      <button id="apiRetryBtn" type="button" class="mt-4 rounded-xl bg-red-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-red-700">
+        Try Again
+      </button>
+    </div>
+
+    <div id="apiBooksGrid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+  </div>
+</section>
+
+<div id="deleteConfirmModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs">
+  <div class="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl">
+    <h3 class="text-xl font-black text-gray-950">Remove Book?</h3>
+    <p class="mt-2 text-sm text-gray-600">
+      Are you sure you want to remove <span id="deleteModalBookTitle" class="font-bold text-gray-950">this book</span> from your reading collection? This action cannot be undone.
+    </p>
+    <div class="mt-6 flex justify-end gap-3">
+      <button id="cancelDeleteBtn" type="button" class="rounded-xl bg-gray-100 px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-200">
+        Cancel
+      </button>
+      <button id="confirmDeleteBtn" type="button" class="rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-red-700">
+        Remove Book
+      </button>
+    </div>
+  </div>
+</div>
+
+<aside id="appToast" class="fixed bottom-5 right-5 z-50 flex translate-y-10 items-center gap-3 rounded-xl bg-gray-950 px-5 py-3.5 text-sm font-semibold text-white shadow-xl opacity-0 transition-all duration-300 pointer-events-none">
+  <span id="appToastMsg">Action completed.</span>
+</aside>
+
+
+<section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+  <div class="grid gap-6 rounded-3xl bg-gray-950 p-8 text-white md:grid-cols-3 md:p-10">
+    <div><p class="text-4xl font-black">10K+</p><p class="mt-2 text-sm text-gray-400">Readers</p></div>
+    <div><p class="text-4xl font-black">2K+</p><p class="mt-2 text-sm text-gray-400">Books &amp; resources</p></div>
+    <div><p class="text-4xl font-black">24/7</p><p class="mt-2 text-sm text-gray-400">Access to your library</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-gray-200 bg-gray-950 text-gray-300">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-4 lg:px-8">
+    <div class="md:col-span-2">
+      <div class="mb-3 flex items-center gap-2 text-xl font-extrabold text-white"><span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-gray-950">E</span>E-Book</div>
+      <p class="max-w-md text-sm leading-6 text-gray-400">A simple digital library for discovering thoughtful books, learning something new, and reading at your own pace.</p>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold text-white">Explore</h3>
+      <div class="space-y-2 text-sm">
+        <a class="block hover:text-white" href="index.html">Home</a>
+        <a class="block hover:text-white" href="src/about.html">About</a>
+        <a class="block hover:text-white" href="src/contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold text-white">Account</h3>
+      <div class="space-y-2 text-sm">
+        <a class="block hover:text-white" href="src/signin.html">Sign In</a>
+        <a class="block hover:text-white" href="src/signup.html">Create Account</a>
+        <a class="block hover:text-white" href="src/contact.html">Help Center</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-5 py-5 text-center text-xs text-gray-500">&copy; 2026 E-Book. Built with HTML5 &amp; Tailwind CSS.</div>
+</footer>
+
+<script src="src/app.js"></script>
+</body>
+</html>

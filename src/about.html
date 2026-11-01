@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Book — a clean and modern digital reading library.">
+  <title>About | E-Book</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+      colors: { ink: '#111111', gold: '#d4a017' }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+</style>
+
+</head>
+<body class="bg-white text-gray-900">
+
+<header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+    <a href="../index.html" class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-gray-950">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gray-950 text-white">E</span>
+      E-Book
+    </a>
+    <div class="hidden items-center gap-7 md:flex">
+      <a href="../index.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Home</a>
+      <a href="about.html" class="text-sm font-bold text-gray-950">About</a>
+      <a href="contact.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Contact</a>
+      <a href="signin.html" class="text-sm font-medium text-gray-700 hover:text-gray-950">Sign In</a>
+      <a href="signup.html" class="rounded-xl bg-gray-950 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800">Get Started</a>
+    </div>
+    <button id="menuBtn" class="rounded-lg border border-gray-200 p-2 md:hidden" aria-label="Open menu">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+  <nav id="mobileMenu" class="hidden border-t border-gray-100 bg-white px-5 pb-5 md:hidden">
+    <div class="flex flex-col gap-2 pt-3">
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="../index.html">Home</a>
+      <a class="rounded-lg px-3 py-2 font-semibold hover:bg-gray-100" href="about.html">About</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="contact.html">Contact</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-gray-100" href="signin.html">Sign In</a>
+      <a class="rounded-lg bg-gray-950 px-3 py-2 text-center font-semibold text-white" href="signup.html">Get Started</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="bg-gray-50"><div class="mx-auto max-w-4xl px-5 py-20 text-center lg:px-8"><p class="text-xs font-bold uppercase tracking-widest text-amber-700">ABOUT E-BOOK</p><h1 class="mt-4 text-5xl font-black tracking-tight">A better place to<br>discover books.</h1><p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">E-Book is built around a simple idea: finding something worth reading should be easy, enjoyable, and accessible.</p></div></section>
+<section class="mx-auto max-w-7xl px-5 py-16 lg:px-8"><div class="grid gap-12 lg:grid-cols-2"><div><p class="text-sm font-bold uppercase tracking-wider text-amber-700">Our story</p><h2 class="mt-2 text-3xl font-black">Made for curious readers</h2><p class="mt-5 leading-7 text-gray-600">E-Book brings books and readers together in a clean digital space. Whether you want a fictional escape, practical knowledge, or a fresh perspective, our platform keeps discovery simple.</p><p class="mt-4 leading-7 text-gray-600">The experience is intentionally focused: clear navigation, useful categories, readable layouts, and an account area that gets out of your way.</p><a href="contact.html" class="mt-6 inline-block rounded-xl bg-gray-950 px-5 py-3 font-semibold text-white hover:bg-gray-800">Talk to us</a></div><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-gray-950 p-6 text-white"><p class="text-4xl font-black">10K+</p><p class="mt-2 text-sm text-gray-400">Readers</p></div><div class="rounded-2xl bg-amber-100 p-6"><p class="text-4xl font-black">2K+</p><p class="mt-2 text-sm text-gray-600">Resources</p></div><div class="rounded-2xl border border-gray-200 p-6"><p class="text-4xl font-black">50+</p><p class="mt-2 text-sm text-gray-500">Categories</p></div><div class="rounded-2xl border border-gray-200 p-6"><p class="text-4xl font-black">24/7</p><p class="mt-2 text-sm text-gray-500">Access</p></div></div></div></section>
+<section class="bg-gray-50 py-16"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="mb-8"><p class="text-sm font-bold uppercase tracking-wider text-amber-700">What matters</p><h2 class="mt-2 text-3xl font-black">Our principles</h2></div><div class="grid gap-5 md:grid-cols-3"><article class="rounded-2xl bg-white p-7 shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-950 text-white text-sm font-bold">01</div><h3 class="mt-5 text-lg font-bold">Simplicity</h3><p class="mt-2 text-sm leading-6 text-gray-500">Useful features without unnecessary clutter.</p></article><article class="rounded-2xl bg-white p-7 shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-900 text-sm font-bold">02</div><h3 class="mt-5 text-lg font-bold">Discovery</h3><p class="mt-2 text-sm leading-6 text-gray-500">Make it easier to find your next meaningful read.</p></article><article class="rounded-2xl bg-white p-7 shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100 text-gray-900 text-sm font-bold">03</div><h3 class="mt-5 text-lg font-bold">Quality</h3><p class="mt-2 text-sm leading-6 text-gray-500">A calm, consistent interface built around readers.</p></article></div></div></section>
+<section class="mx-auto max-w-7xl px-5 py-16 lg:px-8"><div class="grid gap-6 md:grid-cols-2"><article class="rounded-3xl border border-gray-200 p-8"><p class="text-sm font-bold text-amber-700">01 &mdash; MISSION</p><h2 class="mt-3 text-2xl font-black">Make reading easier to start.</h2><p class="mt-3 text-gray-600">We want the path from &ldquo;I want to read&rdquo; to &ldquo;I found something&rdquo; to feel effortless.</p></article><article class="rounded-3xl bg-gray-950 p-8 text-white"><p class="text-sm font-bold text-amber-300">02 &mdash; VISION</p><h2 class="mt-3 text-2xl font-black">A library that feels personal.</h2><p class="mt-3 text-gray-400">A focused digital home where readers can explore, save, and return to books they love.</p></article></div></section>
+<aside class="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8"><div class="rounded-3xl bg-gray-950 p-10 text-white"><h2 class="text-3xl font-black">Ready to find your next book?</h2><p class="mx-auto mt-3 max-w-xl text-gray-400">Create your free account and start exploring.</p><a href="signup.html" class="mt-6 inline-block rounded-xl bg-white px-6 py-3 font-semibold text-gray-950 hover:bg-gray-100">Create Account</a></div></aside>
+</main>
+
+<footer class="border-t border-gray-200 bg-gray-950 text-gray-300">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-4 lg:px-8">
+    <div class="md:col-span-2">
+      <div class="mb-3 flex items-center gap-2 text-xl font-extrabold text-white"><span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-gray-950">E</span>E-Book</div>
+      <p class="max-w-md text-sm leading-6 text-gray-400">A simple digital library for discovering thoughtful books, learning something new, and reading at your own pace.</p>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold text-white">Explore</h3>
+      <div class="space-y-2 text-sm"><a class="block hover:text-white" href="../index.html">Home</a><a class="block hover:text-white" href="about.html">About</a><a class="block hover:text-white" href="contact.html">Contact</a></div>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold text-white">Account</h3>
+      <div class="space-y-2 text-sm"><a class="block hover:text-white" href="signin.html">Sign In</a><a class="block hover:text-white" href="signup.html">Create Account</a><a class="block hover:text-white" href="contact.html">Help Center</a></div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-5 py-5 text-center text-xs text-gray-500">&copy; 2026 E-Book. Built with HTML5 &amp; Tailwind CSS.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
